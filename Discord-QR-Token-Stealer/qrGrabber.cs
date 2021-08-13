@@ -269,5 +269,10 @@ namespace Discord_QR_Token_Stealer
         {
             Environment.Exit(0);
         }
+
+        private void info_Click(object sender, EventArgs e)
+        {
+            new infoPanel().Show();
+        }
     }
 }

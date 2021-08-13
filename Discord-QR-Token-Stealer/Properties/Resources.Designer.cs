@@ -59,5 +59,15 @@ namespace Discord_QR_Token_Stealer.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sniffcat {
+            get {
+                object obj = ResourceManager.GetObject("sniffcat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

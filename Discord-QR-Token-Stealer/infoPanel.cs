@@ -4,9 +4,9 @@ using System.Diagnostics;
 
 namespace Discord_QR_Token_Stealer
 {
-    public partial class info : Form
+    public partial class infoPanel : Form
     {
-        public info()
+        public infoPanel()
         {
             InitializeComponent();
         }
@@ -20,9 +20,10 @@ namespace Discord_QR_Token_Stealer
             proc.Start();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void label1_Click_1(object sender, EventArgs e)
         {
             openUrl("https://verlox.cc");
+
         }
 
         private void label2_Click(object sender, EventArgs e)

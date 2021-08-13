@@ -29,9 +29,9 @@ namespace Discord_QR_Token_Stealer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(qrGrabber));
             this.chromiumWebBrowser1 = new CefSharp.WinForms.ChromiumWebBrowser();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.currentCode = new System.Windows.Forms.PictureBox();
             this.exportInfo = new System.Windows.Forms.Button();
             this.lblToken = new System.Windows.Forms.Label();
             this.lblTag = new System.Windows.Forms.Label();
@@ -40,6 +40,8 @@ namespace Discord_QR_Token_Stealer
             this.lblId = new System.Windows.Forms.Label();
             this.lblTimeLeft = new System.Windows.Forms.Label();
             this.reloadPage = new System.Windows.Forms.Button();
+            this.info = new System.Windows.Forms.Button();
+            this.currentCode = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.currentCode)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,38 +63,30 @@ namespace Discord_QR_Token_Stealer
             // 
             this.listBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(347, 684);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(1251, 121);
             this.listBox2.TabIndex = 2;
             // 
-            // currentCode
-            // 
-            this.currentCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.currentCode.Location = new System.Drawing.Point(12, 76);
-            this.currentCode.Name = "currentCode";
-            this.currentCode.Size = new System.Drawing.Size(329, 497);
-            this.currentCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.currentCode.TabIndex = 3;
-            this.currentCode.TabStop = false;
-            this.currentCode.Click += new System.EventHandler(this.currentCode_Click);
-            // 
             // exportInfo
             // 
             this.exportInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.exportInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.exportInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.exportInfo.Location = new System.Drawing.Point(12, 781);
             this.exportInfo.Name = "exportInfo";
             this.exportInfo.Size = new System.Drawing.Size(329, 23);
             this.exportInfo.TabIndex = 4;
             this.exportInfo.Text = "Export account information";
-            this.exportInfo.UseVisualStyleBackColor = true;
+            this.exportInfo.UseVisualStyleBackColor = false;
             this.exportInfo.Click += new System.EventHandler(this.exportInfo_Click);
             // 
             // lblToken
             // 
             this.lblToken.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblToken.Location = new System.Drawing.Point(12, 644);
+            this.lblToken.Location = new System.Drawing.Point(12, 628);
             this.lblToken.Name = "lblToken";
             this.lblToken.Size = new System.Drawing.Size(329, 17);
             this.lblToken.TabIndex = 5;
@@ -103,7 +97,7 @@ namespace Discord_QR_Token_Stealer
             // lblTag
             // 
             this.lblTag.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblTag.Location = new System.Drawing.Point(12, 678);
+            this.lblTag.Location = new System.Drawing.Point(12, 662);
             this.lblTag.Name = "lblTag";
             this.lblTag.Size = new System.Drawing.Size(329, 17);
             this.lblTag.TabIndex = 6;
@@ -114,7 +108,7 @@ namespace Discord_QR_Token_Stealer
             // lblEmail
             // 
             this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblEmail.Location = new System.Drawing.Point(12, 695);
+            this.lblEmail.Location = new System.Drawing.Point(12, 679);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(329, 17);
             this.lblEmail.TabIndex = 7;
@@ -125,7 +119,7 @@ namespace Discord_QR_Token_Stealer
             // lblPhone
             // 
             this.lblPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblPhone.Location = new System.Drawing.Point(12, 712);
+            this.lblPhone.Location = new System.Drawing.Point(12, 696);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(329, 17);
             this.lblPhone.TabIndex = 8;
@@ -136,7 +130,7 @@ namespace Discord_QR_Token_Stealer
             // lblId
             // 
             this.lblId.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblId.Location = new System.Drawing.Point(12, 661);
+            this.lblId.Location = new System.Drawing.Point(12, 645);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(329, 17);
             this.lblId.TabIndex = 9;
@@ -156,19 +150,47 @@ namespace Discord_QR_Token_Stealer
             // 
             // reloadPage
             // 
+            this.reloadPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.reloadPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.reloadPage.Location = new System.Drawing.Point(12, 752);
             this.reloadPage.Name = "reloadPage";
-            this.reloadPage.Size = new System.Drawing.Size(329, 23);
+            this.reloadPage.Size = new System.Drawing.Size(160, 23);
             this.reloadPage.TabIndex = 11;
             this.reloadPage.Text = "Reload page";
-            this.reloadPage.UseVisualStyleBackColor = true;
+            this.reloadPage.UseVisualStyleBackColor = false;
             this.reloadPage.Click += new System.EventHandler(this.reloadPage_Click);
+            // 
+            // info
+            // 
+            this.info.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.info.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.info.Location = new System.Drawing.Point(181, 752);
+            this.info.Name = "info";
+            this.info.Size = new System.Drawing.Size(160, 23);
+            this.info.TabIndex = 12;
+            this.info.Text = "Information";
+            this.info.UseVisualStyleBackColor = false;
+            this.info.Click += new System.EventHandler(this.info_Click);
+            // 
+            // currentCode
+            // 
+            this.currentCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.currentCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.currentCode.Location = new System.Drawing.Point(12, 76);
+            this.currentCode.Name = "currentCode";
+            this.currentCode.Size = new System.Drawing.Size(329, 497);
+            this.currentCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.currentCode.TabIndex = 3;
+            this.currentCode.TabStop = false;
+            this.currentCode.Click += new System.EventHandler(this.currentCode_Click);
             // 
             // qrGrabber
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1610, 816);
+            this.Controls.Add(this.info);
             this.Controls.Add(this.reloadPage);
             this.Controls.Add(this.lblTimeLeft);
             this.Controls.Add(this.lblId);
@@ -180,6 +202,7 @@ namespace Discord_QR_Token_Stealer
             this.Controls.Add(this.currentCode);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.chromiumWebBrowser1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "qrGrabber";
             this.Text = "QR Code Token Grabber by verlox#0001";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.qrGrabber_FormClosing);
@@ -201,6 +224,7 @@ namespace Discord_QR_Token_Stealer
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblTimeLeft;
         private System.Windows.Forms.Button reloadPage;
+        private System.Windows.Forms.Button info;
     }
 }
 
