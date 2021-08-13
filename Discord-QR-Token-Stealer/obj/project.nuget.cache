@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "JgbD+a75fyNR00R/h/W+9K5HxYlfYShaBkjYUBsdKVVp2oWy8aJLhTfOs4IL9w6fHczSdqpi3/dHJfnkgSeqaw==",
+  "success": true,
+  "projectFilePath": "D:\\[A] Code\\C#\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Steve\\.nuget\\packages\\cef.redist.x64\\92.0.25\\cef.redist.x64.92.0.25.nupkg.sha512",
+    "C:\\Users\\Steve\\.nuget\\packages\\cef.redist.x86\\92.0.25\\cef.redist.x86.92.0.25.nupkg.sha512",
+    "C:\\Users\\Steve\\.nuget\\packages\\cefsharp.common\\92.0.250-pre\\cefsharp.common.92.0.250-pre.nupkg.sha512",
+    "C:\\Users\\Steve\\.nuget\\packages\\cefsharp.winforms\\92.0.250-pre\\cefsharp.winforms.92.0.250-pre.nupkg.sha512",
+    "C:\\Users\\Steve\\.nuget\\packages\\newtonsoft.json\\3.5.8\\newtonsoft.json.3.5.8.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Discord-QR-Token-Stealer depends on Newtonsoft.Json (>= 1.7.0) but Newtonsoft.Json 1.7.0 was not found. An approximate best match of Newtonsoft.Json 3.5.8 was resolved.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.2",
+        ".NETFramework,Version=v4.7.2/win",
+        ".NETFramework,Version=v4.7.2/win-x64",
+        ".NETFramework,Version=v4.7.2/win-x86"
+      ]
+    }
+  ]
+}
