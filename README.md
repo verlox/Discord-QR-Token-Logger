@@ -9,15 +9,12 @@ Thank you to [9P9](https://github.com/9P9) for the base logger I used, this is a
 * .NET Framework 4.7.2
 * Required dependencies
 
-## Tips
-* Click the preview to copy the image to clipboard
-* Click a label to copy its contents
-* Export a user's information with the bottom left button, it'll be in /exports/
-
 ## Features
 * Timer with countdown until code expires
 * User information export in JSON format
-* Easy token copying
+* Easy token copy (click preview)
+* Click label to copy contents
+* Easy user information export (bottom left, exported to /exports/)
 
 ## Screenshots
 ![Fullscreen](https://raw.githubusercontent.com/verlox/Discord-QR-Token-Logger/master/Images/fullss-1.png)
