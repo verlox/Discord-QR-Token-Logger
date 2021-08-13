@@ -182,6 +182,7 @@ namespace Discord_QR_Token_Stealer
             this.Controls.Add(this.chromiumWebBrowser1);
             this.Name = "qrGrabber";
             this.Text = "QR Code Token Grabber by verlox#0001";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.qrGrabber_FormClosing);
             this.Load += new System.EventHandler(this.qrGrabber_Load);
             ((System.ComponentModel.ISupportInitialize)(this.currentCode)).EndInit();
             this.ResumeLayout(false);

