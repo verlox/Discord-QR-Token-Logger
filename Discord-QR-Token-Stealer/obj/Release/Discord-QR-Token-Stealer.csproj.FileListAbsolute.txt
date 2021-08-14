@@ -95,3 +95,4 @@ D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\obj\Release\Dis
 D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\obj\Release\Discord-QR-Token-Stealer.exe
 D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\obj\Release\Discord-QR-Token-Stealer.pdb
 D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\obj\Release\Discord_QR_Token_Stealer.infoPanel.resources
+D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\obj\Release\Discord_QR_Token_Stealer.setHook.resources

