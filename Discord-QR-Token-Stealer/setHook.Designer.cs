@@ -29,6 +29,7 @@ namespace Discord_QR_Token_Stealer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(setHook));
             this.hook = new System.Windows.Forms.TextBox();
             this.set = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -61,8 +62,9 @@ namespace Discord_QR_Token_Stealer
             this.ClientSize = new System.Drawing.Size(634, 77);
             this.Controls.Add(this.set);
             this.Controls.Add(this.hook);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "setHook";
-            this.Text = "setHook";
+            this.Text = "Set Discord webhook";
             this.ResumeLayout(false);
             this.PerformLayout();
 

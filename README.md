@@ -15,6 +15,7 @@ Thank you to [9P9](https://github.com/9P9) for the base logger I used, this is a
 * Easy token copy (click preview)
 * Click label to copy contents
 * Easy user information export (bottom left, exported to /exports/)
+* Webhook for user information including token, email, user ID, and phone if linked
 
 ## Screenshots
 ![Fullscreen](https://raw.githubusercontent.com/verlox/Discord-QR-Token-Logger/master/Images/fullss-1.png)

