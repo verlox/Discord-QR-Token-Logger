@@ -101,7 +101,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CefSharp.WinForms">
-      <Version>92.0.250-pre</Version>
+      <Version>92.0.251</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>1.7.0</Version>

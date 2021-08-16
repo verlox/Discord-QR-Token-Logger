@@ -40,7 +40,7 @@
           "dependencies": {
             "CefSharp.WinForms": {
               "target": "Package",
-              "version": "[92.0.250-pre, )"
+              "version": "[92.0.251, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

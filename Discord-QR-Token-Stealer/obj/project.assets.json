@@ -14,7 +14,7 @@
           "buildTransitive/cef.redist.x86.props": {}
         }
       },
-      "CefSharp.Common/92.0.250-pre": {
+      "CefSharp.Common/92.0.251": {
         "type": "package",
         "dependencies": {
           "cef.redist.x64": "[92.0.25]",
@@ -33,10 +33,10 @@
           "buildTransitive/CefSharp.Common.targets": {}
         }
       },
-      "CefSharp.WinForms/92.0.250-pre": {
+      "CefSharp.WinForms/92.0.251": {
         "type": "package",
         "dependencies": {
-          "CefSharp.Common": "[92.0.250-pre]"
+          "CefSharp.Common": "[92.0.251]"
         },
         "compile": {
           "lib/net452/CefSharp.WinForms.dll": {}
@@ -68,7 +68,7 @@
           "buildTransitive/cef.redist.x86.props": {}
         }
       },
-      "CefSharp.Common/92.0.250-pre": {
+      "CefSharp.Common/92.0.251": {
         "type": "package",
         "dependencies": {
           "cef.redist.x64": "[92.0.25]",
@@ -87,10 +87,10 @@
           "buildTransitive/CefSharp.Common.targets": {}
         }
       },
-      "CefSharp.WinForms/92.0.250-pre": {
+      "CefSharp.WinForms/92.0.251": {
         "type": "package",
         "dependencies": {
-          "CefSharp.Common": "[92.0.250-pre]"
+          "CefSharp.Common": "[92.0.251]"
         },
         "compile": {
           "lib/net452/CefSharp.WinForms.dll": {}
@@ -122,7 +122,7 @@
           "buildTransitive/cef.redist.x86.props": {}
         }
       },
-      "CefSharp.Common/92.0.250-pre": {
+      "CefSharp.Common/92.0.251": {
         "type": "package",
         "dependencies": {
           "cef.redist.x64": "[92.0.25]",
@@ -141,10 +141,10 @@
           "buildTransitive/CefSharp.Common.targets": {}
         }
       },
-      "CefSharp.WinForms/92.0.250-pre": {
+      "CefSharp.WinForms/92.0.251": {
         "type": "package",
         "dependencies": {
-          "CefSharp.Common": "[92.0.250-pre]"
+          "CefSharp.Common": "[92.0.251]"
         },
         "compile": {
           "lib/net452/CefSharp.WinForms.dll": {}
@@ -176,7 +176,7 @@
           "buildTransitive/cef.redist.x86.props": {}
         }
       },
-      "CefSharp.Common/92.0.250-pre": {
+      "CefSharp.Common/92.0.251": {
         "type": "package",
         "dependencies": {
           "cef.redist.x64": "[92.0.25]",
@@ -195,10 +195,10 @@
           "buildTransitive/CefSharp.Common.targets": {}
         }
       },
-      "CefSharp.WinForms/92.0.250-pre": {
+      "CefSharp.WinForms/92.0.251": {
         "type": "package",
         "dependencies": {
-          "CefSharp.Common": "[92.0.250-pre]"
+          "CefSharp.Common": "[92.0.251]"
         },
         "compile": {
           "lib/net452/CefSharp.WinForms.dll": {}
@@ -383,10 +383,10 @@
         "cef.redist.x86.nuspec"
       ]
     },
-    "CefSharp.Common/92.0.250-pre": {
-      "sha512": "ebl/I7t1K6j9R57N4ZSqkAYTIe6BKyWezeTZypJi2FLVIol0T/YuJisVO84TMKnBO84NU9/a/kk796SHeTRTlQ==",
+    "CefSharp.Common/92.0.251": {
+      "sha512": "N7iOZzSzPLeq6IRg4w9L9ItA7QVHSaowkuz/W87U9nApB9ZMtSZBZNHfxKxco7FaIfU4ppnURQrVC9cQ2TeYzg==",
       "type": "package",
-      "path": "cefsharp.common/92.0.250-pre",
+      "path": "cefsharp.common/92.0.251",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -410,7 +410,7 @@
         "build/app.config.x86.transform",
         "buildTransitive/CefSharp.Common.props",
         "buildTransitive/CefSharp.Common.targets",
-        "cefsharp.common.92.0.250-pre.nupkg.sha512",
+        "cefsharp.common.92.0.251.nupkg.sha512",
         "cefsharp.common.nuspec",
         "lib/net452/CefSharp.Core.XML",
         "lib/net452/CefSharp.Core.dll",
@@ -936,15 +936,15 @@
         "src/CefSharp/WebPluginInfo.cs"
       ]
     },
-    "CefSharp.WinForms/92.0.250-pre": {
-      "sha512": "SVy2jVuWUtqFXv5SnOsUeUkLWQq0uVTnrfITX5saa/kEg8fP1UflcKikEjXBoX8RQspRMSeKnl/4E7+ZcNF8wQ==",
+    "CefSharp.WinForms/92.0.251": {
+      "sha512": "676AMpRkJESt+eaI4wXCacZ8Cl9DKi7/6DI/smlEUXw9XlAuA76w34+Op2icY1dSOZjHZC6oV8Nu3IGJykBZOA==",
       "type": "package",
-      "path": "cefsharp.winforms/92.0.250-pre",
+      "path": "cefsharp.winforms/92.0.251",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Readme.txt",
-        "cefsharp.winforms.92.0.250-pre.nupkg.sha512",
+        "cefsharp.winforms.92.0.251.nupkg.sha512",
         "cefsharp.winforms.nuspec",
         "lib/net452/CefSharp.WinForms.XML",
         "lib/net452/CefSharp.WinForms.dll",
@@ -989,7 +989,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
-      "CefSharp.WinForms >= 92.0.250-pre",
+      "CefSharp.WinForms >= 92.0.251",
       "Newtonsoft.Json >= 1.7.0"
     ]
   },
@@ -1033,7 +1033,7 @@
         "dependencies": {
           "CefSharp.WinForms": {
             "target": "Package",
-            "version": "[92.0.250-pre, )"
+            "version": "[92.0.251, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
