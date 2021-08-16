@@ -1,6 +1,6 @@
 .vs/
 .git/
-Discord-QR-Token-Stealer/bin/Debug
-Discord-QR-Token-Stealer/bin/Release
+Discord-QR-Token-Stealer/bin
+Discord-QR-Token-Stealer/obj
 *.zip
 changelog.txt
