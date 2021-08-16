@@ -37,6 +37,7 @@ namespace Discord_QR_Token_Stealer
             // hook
             // 
             this.hook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.hook.ForeColor = System.Drawing.Color.LightGray;
             this.hook.Location = new System.Drawing.Point(12, 12);
             this.hook.Name = "hook";
             this.hook.Size = new System.Drawing.Size(610, 20);
@@ -46,6 +47,7 @@ namespace Discord_QR_Token_Stealer
             // 
             this.set.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.set.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.set.ForeColor = System.Drawing.Color.LightGray;
             this.set.Location = new System.Drawing.Point(12, 38);
             this.set.Name = "set";
             this.set.Size = new System.Drawing.Size(610, 23);

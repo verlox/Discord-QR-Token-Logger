@@ -49,6 +49,7 @@ namespace Discord_QR_Token_Stealer
             // label1
             // 
             this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
             this.label1.Location = new System.Drawing.Point(12, 285);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(257, 23);
@@ -60,6 +61,7 @@ namespace Discord_QR_Token_Stealer
             // label2
             // 
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.ForeColor = System.Drawing.Color.LightGray;
             this.label2.Location = new System.Drawing.Point(12, 308);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(257, 23);
@@ -79,7 +81,7 @@ namespace Discord_QR_Token_Stealer
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "infoPanel";
-            this.Text = "Tool by verlox#0001";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

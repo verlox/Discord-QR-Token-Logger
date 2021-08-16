@@ -65,6 +65,7 @@ namespace Discord_QR_Token_Stealer
             this.logBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.logBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.logBox.ForeColor = System.Drawing.Color.LightGray;
             this.logBox.FormattingEnabled = true;
             this.logBox.Location = new System.Drawing.Point(347, 684);
             this.logBox.Name = "logBox";
@@ -76,6 +77,7 @@ namespace Discord_QR_Token_Stealer
             this.exportInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.exportInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.exportInfo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.exportInfo.ForeColor = System.Drawing.Color.LightGray;
             this.exportInfo.Location = new System.Drawing.Point(12, 781);
             this.exportInfo.Name = "exportInfo";
             this.exportInfo.Size = new System.Drawing.Size(329, 23);
@@ -88,6 +90,7 @@ namespace Discord_QR_Token_Stealer
             // 
             this.lblToken.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblToken.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblToken.ForeColor = System.Drawing.Color.LightGray;
             this.lblToken.Location = new System.Drawing.Point(12, 599);
             this.lblToken.Name = "lblToken";
             this.lblToken.Size = new System.Drawing.Size(329, 17);
@@ -100,6 +103,7 @@ namespace Discord_QR_Token_Stealer
             // 
             this.lblTag.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTag.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblTag.ForeColor = System.Drawing.Color.LightGray;
             this.lblTag.Location = new System.Drawing.Point(12, 633);
             this.lblTag.Name = "lblTag";
             this.lblTag.Size = new System.Drawing.Size(329, 17);
@@ -112,6 +116,7 @@ namespace Discord_QR_Token_Stealer
             // 
             this.lblEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblEmail.ForeColor = System.Drawing.Color.LightGray;
             this.lblEmail.Location = new System.Drawing.Point(12, 650);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(329, 17);
@@ -124,6 +129,7 @@ namespace Discord_QR_Token_Stealer
             // 
             this.lblPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPhone.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblPhone.ForeColor = System.Drawing.Color.LightGray;
             this.lblPhone.Location = new System.Drawing.Point(12, 667);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(329, 17);
@@ -136,6 +142,7 @@ namespace Discord_QR_Token_Stealer
             // 
             this.lblId.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblId.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblId.ForeColor = System.Drawing.Color.LightGray;
             this.lblId.Location = new System.Drawing.Point(12, 616);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(329, 17);
@@ -147,6 +154,7 @@ namespace Discord_QR_Token_Stealer
             // lblTimeLeft
             // 
             this.lblTimeLeft.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTimeLeft.ForeColor = System.Drawing.Color.LightGray;
             this.lblTimeLeft.Location = new System.Drawing.Point(12, 32);
             this.lblTimeLeft.Name = "lblTimeLeft";
             this.lblTimeLeft.Size = new System.Drawing.Size(329, 23);
@@ -158,6 +166,7 @@ namespace Discord_QR_Token_Stealer
             // 
             this.reloadPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.reloadPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.reloadPage.ForeColor = System.Drawing.Color.LightGray;
             this.reloadPage.Location = new System.Drawing.Point(12, 752);
             this.reloadPage.Name = "reloadPage";
             this.reloadPage.Size = new System.Drawing.Size(160, 23);
@@ -170,6 +179,7 @@ namespace Discord_QR_Token_Stealer
             // 
             this.info.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.info.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.info.ForeColor = System.Drawing.Color.LightGray;
             this.info.Location = new System.Drawing.Point(181, 752);
             this.info.Name = "info";
             this.info.Size = new System.Drawing.Size(160, 23);
@@ -195,6 +205,7 @@ namespace Discord_QR_Token_Stealer
             this.setHook.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.setHook.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.setHook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.setHook.ForeColor = System.Drawing.Color.LightGray;
             this.setHook.Location = new System.Drawing.Point(12, 723);
             this.setHook.Name = "setHook";
             this.setHook.Size = new System.Drawing.Size(329, 23);
