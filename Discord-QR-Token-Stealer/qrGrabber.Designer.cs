@@ -164,6 +164,7 @@ namespace Discord_QR_Token_Stealer
             // 
             // reloadPage
             // 
+            this.reloadPage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.reloadPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.reloadPage.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.reloadPage.ForeColor = System.Drawing.Color.LightGray;
@@ -177,6 +178,7 @@ namespace Discord_QR_Token_Stealer
             // 
             // info
             // 
+            this.info.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.info.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.info.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.info.ForeColor = System.Drawing.Color.LightGray;

