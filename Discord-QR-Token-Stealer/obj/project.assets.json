@@ -45,13 +45,13 @@
           "lib/net452/CefSharp.WinForms.dll": {}
         }
       },
-      "Newtonsoft.Json/3.5.8": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/35/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/35/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       }
     },
@@ -99,13 +99,13 @@
           "lib/net452/CefSharp.WinForms.dll": {}
         }
       },
-      "Newtonsoft.Json/3.5.8": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/35/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/35/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       }
     },
@@ -153,13 +153,13 @@
           "lib/net452/CefSharp.WinForms.dll": {}
         }
       },
-      "Newtonsoft.Json/3.5.8": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/35/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/35/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       }
     },
@@ -207,13 +207,13 @@
           "lib/net452/CefSharp.WinForms.dll": {}
         }
       },
-      "Newtonsoft.Json/3.5.8": {
+      "Newtonsoft.Json/13.0.1": {
         "type": "package",
         "compile": {
-          "lib/35/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/35/Newtonsoft.Json.dll": {}
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       }
     }
@@ -966,52 +966,59 @@
         "src/CefSharp.WinForms/WebBrowserExtensions.cs"
       ]
     },
-    "Newtonsoft.Json/3.5.8": {
-      "sha512": "Xmri4q9s1NjuiBtOFkWMU9sUZdw5V7kFSf3CQQ3TlDyzWQHo94d5cHNxsSlnezGAZSPfdEG5k7bOrkzTe6rUOQ==",
+    "Newtonsoft.Json/13.0.1": {
+      "sha512": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
       "type": "package",
-      "path": "newtonsoft.json/3.5.8",
+      "path": "newtonsoft.json/13.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/20/Newtonsoft.Json.Net20.dll",
-        "lib/20/Newtonsoft.Json.Net20.pdb",
-        "lib/20/Newtonsoft.Json.Net20.xml",
-        "lib/35/Newtonsoft.Json.dll",
-        "lib/35/Newtonsoft.Json.pdb",
-        "lib/35/Newtonsoft.Json.xml",
-        "lib/SL/Newtonsoft.Json.Silverlight.dll",
-        "lib/SL/Newtonsoft.Json.Silverlight.pdb",
-        "lib/SL/Newtonsoft.Json.Silverlight.xml",
-        "newtonsoft.json.3.5.8.nupkg.sha512",
-        "newtonsoft.json.nuspec"
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
       "CefSharp.WinForms >= 92.0.251",
-      "Newtonsoft.Json >= 1.7.0"
+      "Newtonsoft.Json >= 13.0.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sp4ra\\.nuget\\packages\\": {},
+    "C:\\Users\\Steve\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sp4ra\\Desktop\\qr-grabber\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
+      "projectUniqueName": "D:\\[A] Code\\C#\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
       "projectName": "Discord-QR-Token-Stealer",
-      "projectPath": "C:\\Users\\sp4ra\\Desktop\\qr-grabber\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
-      "packagesPath": "C:\\Users\\sp4ra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sp4ra\\Desktop\\qr-grabber\\Discord-QR-Token-Stealer\\obj\\",
+      "projectPath": "D:\\[A] Code\\C#\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
+      "packagesPath": "C:\\Users\\Steve\\.nuget\\packages\\",
+      "outputPath": "D:\\[A] Code\\C#\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\sp4ra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1037,7 +1044,7 @@
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "[1.7.0, )"
+            "version": "[13.0.1, )"
           }
         }
       }
@@ -1053,20 +1060,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Discord-QR-Token-Stealer depends on Newtonsoft.Json (>= 1.7.0) but Newtonsoft.Json 1.7.0 was not found. An approximate best match of Newtonsoft.Json 3.5.8 was resolved.",
-      "libraryId": "Newtonsoft.Json",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.2",
-        ".NETFramework,Version=v4.7.2/win",
-        ".NETFramework,Version=v4.7.2/win-x64",
-        ".NETFramework,Version=v4.7.2/win-x86"
-      ]
-    }
-  ]
+  }
 }

@@ -85,7 +85,6 @@ D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\bin\Release\Cef
 D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\bin\Release\CefSharp.WinForms.dll
 D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\bin\Release\CefSharp.WinForms.pdb
 D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\bin\Release\Newtonsoft.Json.dll
-D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\bin\Release\Newtonsoft.Json.pdb
 D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\obj\Release\Discord-QR-Token-Stealer.csproj.AssemblyReference.cache
 D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\obj\Release\Discord_QR_Token_Stealer.infoPanel.resources
 D:\[A] Code\C#\Discord-QR-Token-Stealer\Discord-QR-Token-Stealer\obj\Release\Discord_QR_Token_Stealer.qrGrabber.resources

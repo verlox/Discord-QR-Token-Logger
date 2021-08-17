@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sp4ra\\Desktop\\qr-grabber\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj": {}
+    "D:\\[A] Code\\C#\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sp4ra\\Desktop\\qr-grabber\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj": {
+    "D:\\[A] Code\\C#\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sp4ra\\Desktop\\qr-grabber\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
+        "projectUniqueName": "D:\\[A] Code\\C#\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
         "projectName": "Discord-QR-Token-Stealer",
-        "projectPath": "C:\\Users\\sp4ra\\Desktop\\qr-grabber\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
-        "packagesPath": "C:\\Users\\sp4ra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sp4ra\\Desktop\\qr-grabber\\Discord-QR-Token-Stealer\\obj\\",
+        "projectPath": "D:\\[A] Code\\C#\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
+        "packagesPath": "C:\\Users\\Steve\\.nuget\\packages\\",
+        "outputPath": "D:\\[A] Code\\C#\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\sp4ra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Steve\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[1.7.0, )"
+              "version": "[13.0.1, )"
             }
           }
         }
