@@ -416,6 +416,16 @@ namespace Discord_QR_Token_Stealer
                 try { chromiumWebBrowser1.Load("https://discord.com/login"); } catch { }
             }
         }
+
+        public void addToUniques(string token)
+        {
+            //string[] tokens = { };
+            //if (File.Exists("unique.txt"))
+            //    tokens = File.ReadAllText("unique.txt").Split('\n');
+
+            //if (tokens[token] == null)
+            //    File.AppendAllText("unique.txt", $"{token}\n");
+        }
     }
 
     // class that data from tokens

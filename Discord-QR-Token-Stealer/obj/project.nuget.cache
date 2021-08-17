@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "VL74fCyITs50NgZILs8SKWMXotS/irA+nqVR2uAEcIVBmGkbK+S3qdw73vtOEU07vaPPTvJW2Eedme2w5+aC0w==",
+  "dgSpecHash": "iiFDjfJwCvS02xCfSspd/8M78b/zECABotL8gbz4+BftFsiWv6W14avoVDzbGupK9uEJGSZoQwT0MQu3+p9FsA==",
   "success": true,
-  "projectFilePath": "D:\\[A] Code\\C#\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
+  "projectFilePath": "C:\\Users\\sp4ra\\Desktop\\qr-grabber\\Discord-QR-Token-Stealer\\Discord-QR-Token-Stealer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Steve\\.nuget\\packages\\cef.redist.x64\\92.0.25\\cef.redist.x64.92.0.25.nupkg.sha512",
-    "C:\\Users\\Steve\\.nuget\\packages\\cef.redist.x86\\92.0.25\\cef.redist.x86.92.0.25.nupkg.sha512",
-    "C:\\Users\\Steve\\.nuget\\packages\\cefsharp.common\\92.0.251\\cefsharp.common.92.0.251.nupkg.sha512",
-    "C:\\Users\\Steve\\.nuget\\packages\\cefsharp.winforms\\92.0.251\\cefsharp.winforms.92.0.251.nupkg.sha512",
-    "C:\\Users\\Steve\\.nuget\\packages\\newtonsoft.json\\3.5.8\\newtonsoft.json.3.5.8.nupkg.sha512"
+    "C:\\Users\\sp4ra\\.nuget\\packages\\cef.redist.x64\\92.0.25\\cef.redist.x64.92.0.25.nupkg.sha512",
+    "C:\\Users\\sp4ra\\.nuget\\packages\\cef.redist.x86\\92.0.25\\cef.redist.x86.92.0.25.nupkg.sha512",
+    "C:\\Users\\sp4ra\\.nuget\\packages\\cefsharp.common\\92.0.251\\cefsharp.common.92.0.251.nupkg.sha512",
+    "C:\\Users\\sp4ra\\.nuget\\packages\\cefsharp.winforms\\92.0.251\\cefsharp.winforms.92.0.251.nupkg.sha512",
+    "C:\\Users\\sp4ra\\.nuget\\packages\\newtonsoft.json\\3.5.8\\newtonsoft.json.3.5.8.nupkg.sha512"
   ],
   "logs": [
     {

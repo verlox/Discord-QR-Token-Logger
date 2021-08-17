@@ -81,7 +81,7 @@ namespace Discord_QR_Token_Stealer
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "infoPanel";
-            this.Text = " ";
+            this.Text = "Grabber information";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
