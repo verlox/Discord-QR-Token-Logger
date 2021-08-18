@@ -54,7 +54,7 @@ namespace Discord_QR_Token_Stealer
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(257, 23);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Made by verlox.cc";
+            this.label1.Text = "verlox.cc";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
@@ -66,7 +66,7 @@ namespace Discord_QR_Token_Stealer
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(257, 23);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Github";
+            this.label2.Text = "github.com/verlox";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -81,7 +81,7 @@ namespace Discord_QR_Token_Stealer
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "infoPanel";
-            this.Text = "Grabber information";
+            this.Text = "QR grabber information";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
