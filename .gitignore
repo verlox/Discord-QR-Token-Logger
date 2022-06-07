@@ -4,3 +4,4 @@ Discord-QR-Token-Stealer/bin
 Discord-QR-Token-Stealer/obj
 *.zip
 changelog.txt
+build.bat

